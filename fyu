@@ -1,0 +1,20 @@
+  //养护到期时间-条件查询
+     String startDate = queryDto.getStartDate();
+        String endDate = queryDto.getEndDate();
+        if (StringUtils.isNotBlank(startDate) && StringUtils.isNotBlank(endDate)) {
+            mainVoList = mainVoList.stream().filter(e -> {
+                DateTimeFormatter fmt = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                LocalDate startDate1 = LocalDate.parse(startDate, fmt);
+                LocalDate endDate1 = LocalDate.parse(endDate, fmt);
+                //在开始日期之后，在结束日期之前
+                if (Objects.nonNull(e.getDefaultMaintainDate())) {
+                    if (!(startDate1.isAfter(e.getDefaultMaintainDate()) && endDate1.isBefore(e.getDefaultMaintainDate()))) {
+                        return false;
+                    }
+                }
+                return true;
+            }).collect(Collectors.toList());
+        }
+        for (FacilityMaintenanceVO vo : mainVoList) {
+            System.out.println(vo);
+        }
