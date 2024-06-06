@@ -1,0 +1,18 @@
+<!--小程序支付 v3-->
+<dependency>
+	<groupId>com.github.wechatpay-apiv3</groupId>
+	<artifactId>wechatpay-apache-httpclient</artifactId>
+	<version>0.4.9</version>
+</dependency>                         
+public interface ConstantUtils {
+ 
+ 
+    // JSAPI下单
+    public final static String JSAPI_URL = "https://api.mch.weixin.qq.com/v3/pay/transactions/jsapi";
+    // 支付通知
+    public final static String NOTIFY_URL = "https://你的线上地址.com";
+    // 关闭订单
+    public final static String CLOSE_PAY_ORDER_URL = "https://api.mch.weixin.qq.com/v3/pay/transactions/out-trade-no/{out_trade_no}/close";
+    // 查询订单 (根据商户订单号查询)
+    public final static String QUERY_PAY_RESULT_URL = "https://api.mch.weixin.qq.com/v3/pay/transactions/out-trade-no/";
+}
