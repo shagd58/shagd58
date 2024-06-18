@@ -1,0 +1,15 @@
+package com.yelang.project.extend.earthquake.domain;
+import java.io.Serializable;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+/**
+ * 城市地名视图对象
+ * @author yelangking
+ */
+@Data
+@EqualsAndHashCode(callSuper=false)
+public class GeographicNameVo extends GeographicName implements Serializable{
+	private static final long serialVersionUID = -7161733218138543509L;
+	private String lon;//经度
+	private String lat;//纬度
+}
