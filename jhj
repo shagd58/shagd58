@@ -1,0 +1,7 @@
+import random
+
+def random_view(request):
+    l = []
+    for i in range(3):
+        l.append(random.randint(0, 99999))
+    return JsonResponse(l,safe=False)  # 返回json格式，如果里面有列表，必须加safe=False
