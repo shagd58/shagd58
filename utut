@@ -1,0 +1,63 @@
+Note that this will raise a NotImplementedError when used with an
+          xlsx file.
+        
+        :param on_demand:
+        
+          Governs whether sheets are all loaded initially or when demanded
+          by the caller. See :doc:`on_demand`.
+        
+        :param ragged_rows:
+        
+          The default of ``False`` means all rows are padded out with empty cells so
+          that all rows have the same size as found in
+          :attr:`~xlrd.sheet.Sheet.ncols`.
+        
+          ``True`` means that there are no empty cells at the ends of rows.
+          This can result in substantial memory savings if rows are of widely
+          varying sizes. See also the :meth:`~xlrd.sheet.Sheet.row_len` method.
+        
+        
+        :param ignore_workbook_corruption:
+        
+          This option allows to read corrupted workbooks.
+          When ``False`` you may face CompDocError: Workbook corruption.
+          When ``True`` that exception will be ignored.
+        
+        :returns: An instance of the :class:`~xlrd.book.Book` class.
+ 
+DATA
+    FILE_FORMAT_DESCRIPTIONS = {'xls': 'Excel xls', 'xlsb': 'Excel 2007 xl...
+    FMLA_TYPE_ARRAY = 4
+    FMLA_TYPE_CELL = 1
+    FMLA_TYPE_COND_FMT = 8
+    FMLA_TYPE_DATA_VAL = 16
+    FMLA_TYPE_NAME = 32
+    FMLA_TYPE_SHARED = 2
+    PEEK_SIZE = 8
+    XLS_SIGNATURE = b'\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1'
+    XL_CELL_BLANK = 6
+    XL_CELL_BOOLEAN = 4
+    XL_CELL_DATE = 3
+    XL_CELL_EMPTY = 0
+    XL_CELL_ERROR = 5
+    XL_CELL_NUMBER = 2
+    XL_CELL_TEXT = 1
+    ZIP_SIGNATURE = b'PK\x03\x04'
+    __VERSION__ = '2.0.1'
+    biff_text_from_num = {0: '(not BIFF)', 20: '2.0', 21: '2.1', 30: '3', ...
+    empty_cell = empty:''
+    error_text_from_code = {0: '#NULL!', 7: '#DIV/0!', 15: '#VALUE!', 23: ...
+    oBOOL = 3
+    oERR = 4
+    oNUM = 2
+    oREF = -1
+    oREL = -2
+    oSTRG = 1
+    oUNK = 0
+    okind_dict = {-2: 'oREL', -1: 'oREF', 0: 'oUNK', 1: 'oSTRG', 2: 'oNUM'...
+ 
+VERSION
+    2.0.1
+ 
+FILE
+    e:\python_workspace\pythonproject\lib\site-packages\xlrd\__init__.py
